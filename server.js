@@ -1,7 +1,11 @@
 const express = require('express');
-const { _print } = require('./config/scripts');
+
+const connectDB = require('./config/db');
+const { _printLog } = require('./config/scripts');
 
 const server = express();
+
+connectDB();
 
 const PORT = process.env.PORT || 5000;
 
@@ -10,5 +14,5 @@ server.get('/', (req, res) => {
 });
 
 server.listen(PORT, () => {
-  _print(`Server started on port ${PORT}`);
+  _printLog(`Server started on port ${PORT}`);
 });

@@ -1,3 +1,4 @@
 module.exports = {
-  _print: val => console.log(val),
+  _printLog: val => console.log(val),
+  _printErr: val => console.error(val),
 };
