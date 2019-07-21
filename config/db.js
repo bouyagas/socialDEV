@@ -1,16 +1,20 @@
 const mongoose = require('mongoose');
 const config = require('config');
 
-const { _printLog, _printErr } = require('./scripts');
+const { _printLog, _printErr } = require('../util/scripts');
 
 const db = config.get('mongoURL');
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(db, { useNewUrlParser: true });
+    await mongoose.connect(db, {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
+    });
     _printLog('Mongo Connected ...');
-  } catch (error) {
-    _printErr(error.message);
+  } catch (err) {
+    _printErr(err.message);
     process.exit(1);
   }
 };

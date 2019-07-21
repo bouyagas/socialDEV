@@ -1,3 +1,4 @@
 {
-  "mongoURL": "mongodb+srv://bouya:bouya@socialdev-9wxs0.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURL": "mongodb+srv://bouya:bouya@socialdev-9wxs0.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
 }
